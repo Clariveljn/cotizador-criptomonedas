@@ -6,7 +6,7 @@ import { monedas } from '../data/monedas'
 
 const InputSubmit = styled.input`
     background-color: #9497FF;
-    color: #FFF;
+    color: #0D2235;
     border: none;
     height: 40px;
     width: 100%;
@@ -24,7 +24,7 @@ const InputSubmit = styled.input`
     } 
 `
 
-const Formulario = () => {
+const Formulario = ({setMonedas}) => {
     const [criptos, setCriptos] = useState([])
     const [error, setError] = useState(false)
 
@@ -60,6 +60,10 @@ const Formulario = () => {
         }
 
         setError(false)
+        setMonedas({
+            moneda,
+            criptomoneda
+        })
     }
     
   return (
